@@ -97,7 +97,9 @@ body {
 .form-control small {
   visibility: hidden;
   color: red;
-  font-size: 12px;
+  font-size: 7px;
+  display: block;
+  margin-top: 4px;
 }
 
 .form-control.error small {
