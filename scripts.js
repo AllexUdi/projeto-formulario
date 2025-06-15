@@ -31,10 +31,16 @@ function checkInputs() {
   if (passwordValue === "") {
     setErrorFor(password, "A senha é obrigatória.");
   } else if (passwordValue.length < 7) {
-    setErrorFor(password, "A senha deve ter no minímo 7 caracteres.");
+    setErrorFor(password, "A senha deve ter no mínimo 7 caracteres.");
+  } else if (!/^[^a-zA-Z0-9][A-Z][a-zA-Z].{4,}$/.test(passwordValue)) {
+    setErrorFor(
+      password,
+      "A senha deve começar com caractere especial, seguida de letra maiúscula e ter no mínimo 7 caracteres."
+    );
   } else {
     setSucessFor(password);
   }
+
   if (passwordConfirmationValue === "") {
     setErrorFor(passwordConfirmation, "A confirmação de senha é obrigatória");
   } else if (passwordValue != passwordConfirmationValue) {
